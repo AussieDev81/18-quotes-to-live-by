@@ -1,3 +1,4 @@
+/* ======== ROOT VARIABLES ======== */
 :root {
 	--footer-height: 40px;
 	--footer-border-top-color: #d3d3d3;
@@ -20,20 +21,19 @@
 	--modal-centent-width: 60vw;
 }
 
-/*======== MEDIA QUERIES ======== */
-/* Mobiles */
-@media (max-width: 480px)  {
+/* ======== MEDIA QUERIES ======== */
+
+@media (max-width: 480px) {
 	:root {
 		--page-container-margin: 0 1rem;
 		--default-font-size: 14px;
 		--default-line-height: 1.2;
 		--come-back-tomorrow-margin: 1rem auto;
-		--come-back-tomorrow-padding: .5rem;
+		--come-back-tomorrow-padding: 0.5rem;
 		--come-back-tomorrow-border-radius: 0.4rem;
 		--daily-quote-margin-block: 2rem;
 		--print-button-font-size: small;
 		--modal-h1-size: medium;
-		/* --modal-font-size: 12px; */
 		--modal-centent-width: 90vw;
 	}
 }
@@ -56,8 +56,8 @@ body {
 }
 
 h2 {
-    font-size: smaller;
-    color: var(--default-font-color);
+	font-size: smaller;
+	color: var(--default-font-color);
 }
 
 hgroup {
@@ -78,19 +78,19 @@ footer {
 /* ======== CLASSES ======== */
 
 .close-btn {
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
 	position: relative;
 	float: right;
-    bottom: 3px;
-    left: 2px;
-    margin-left: .5rem;
+	bottom: 3px;
+	left: 2px;
+	margin-left: 0.5rem;
 }
 
 .close-btn:hover {
-    fill: #fff;
-    stroke-width: 2;
-    transform: scale(1.1);
+	fill: #fff;
+	stroke-width: 2;
+	transform: scale(1.1);
 }
 
 .come-back-tomorrow {
@@ -104,11 +104,11 @@ footer {
 }
 
 .daily-quote {
-    font-size: x-large;
-    color: var(--daily-quote-color);
-    text-align: center;
-    font-style: italic;
-    margin-block: var(--daily-quote-margin-block);
+	font-size: x-large;
+	color: var(--daily-quote-color);
+	text-align: center;
+	font-style: italic;
+	margin-block: var(--daily-quote-margin-block);
 }
 
 .dev-mode {
@@ -119,17 +119,17 @@ footer {
 	border: 3px dotted black;
 	width: fit-content;
 	margin: 1rem auto;
-	padding: .5rem;
+	padding: 0.5rem;
 	animation: blink-animation 1s steps(5, start) infinite;
 }
 
 .highlight {
-    color: var(--daily-quote-color);
+	color: var(--daily-quote-color);
 }
 
 .page-container {
-    flex: 1;
-    margin: var(--page-container-margin);
+	flex: 1;
+	margin: var(--page-container-margin);
 }
 
 .print-btn {
@@ -159,29 +159,28 @@ footer {
 }
 
 /* ======== MODAL WINDOW ======== */
-/* Overlay background */
+
 .modal {
-    display: none;
+	display: none;
 	height: 100vh;
-    position:fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Dark and partially transparent */
-    z-index: 999; /* Ensure it's above other content */
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.7); /* Dark and partially transparent */
+	z-index: 999; /* Ensure it's above other content */
 	font-size: var(--modal-font-size);
 }
 
-/* Modal content */
 .modal-content {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: var(--modal-centent-width);
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 10px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: var(--modal-centent-width);
 	overflow: auto;
 }
 
@@ -189,13 +188,12 @@ footer {
 	font-size: var(--modal-h1-size);
 }
 
-/* Close button (X) */
 .close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 20px;
-    cursor: pointer;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	font-size: 20px;
+	cursor: pointer;
 }
 
 /* ======== KEYFRAMES ======== */

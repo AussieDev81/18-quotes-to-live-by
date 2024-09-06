@@ -20,7 +20,8 @@ async function renderQuotes() {
 		<path d="M3 5a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14z" />
 		<path d="M9 9l6 6m0 -6l-6 6" />
 	</svg>`;
-	const QUOTE_UNLOCK_COMPLETE_MESSAGE = "🎈 Congratulations.... You have viewed all 18 quotes! 🎈<br><small>Be sure to print or save them for future reference</small>";
+	const QUOTE_UNLOCK_COMPLETE_MESSAGE =
+		"🎈 Congratulations.... You have viewed all 18 quotes! 🎈<br><small>Be sure to print or save them for future reference</small>";
 	const SOURCE_URL = "./json/quotes.json";
 	const LOCAL_STORAGE__QUOTES = "QUOTES";
 	const LOCAL_STORAGE__LAST_UNLOCK_DATE = "LAST_UNLOCK_DATE";
@@ -70,16 +71,17 @@ async function renderQuotes() {
 	 * @param {*} quote The quote to be shown in the daily quote section
 	 */
 	function showDailyQuote(quote) {
-		if(quote === undefined){
+		if (quote === undefined) {
 			dailyQuoteDivElement.innerHTML = QUOTE_UNLOCK_COMPLETE_MESSAGE;
-			if(DEV_MODE_ACTIVE){
-				//Reset and do it again
-				dailyQuoteDivElement.innerHTML += "<p class=\"dev-mode\">DEV_MODE active, refresh page to do it again</p>"
+
+			//Reset and do it again if in dev mode
+			if (DEV_MODE_ACTIVE) {
+				dailyQuoteDivElement.innerHTML +=
+					'<p class="dev-mode">DEV_MODE active, refresh page to do it again</p>';
 				localStorage.removeItem(LOCAL_STORAGE__QUOTES);
 				localStorage.removeItem(LOCAL_STORAGE__LAST_UNLOCK_DATE);
 			}
-		}
-		else {
+		} else {
 			dailyQuoteDivElement.innerHTML = `<h2>Today's Quote...</h2>${quote.message}`;
 			dailyQuoteDivElement.title = `Quote #${quote.id}`;
 			setQuoteLocked(quote.id, false);
@@ -94,35 +96,35 @@ async function renderQuotes() {
 	 */
 	function showUnlockedQuotes() {
 		const unlockedQuotes = getUnlockedQuotes();
-		
-		if (unlockedQuotes){
+
+		if (unlockedQuotes) {
 			// Show a "previously unlocked quotes" heading if there are previously unlocked quotes to display
-		if (unlockedQuotes.length > 0) {
-			unlockedQuotesListElement.innerHTML = "<b>Unlocked Quotes...</b>";
-		}
+			if (unlockedQuotes.length > 0) {
+				unlockedQuotesListElement.innerHTML = "<b>Unlocked Quotes...</b>";
+			}
 
-		// Show each previously unlocked quote iteratively in a new list item
-		unlockedQuotes.forEach((quote) => {
-			const li = document.createElement("li");
-			li.id = `quote-${quote.id}`;
-			li.title = `Quote #${quote.id}`;
-			li.textContent = quote.message;
-			unlockedQuotesListElement.appendChild(li);
-		});
+			// Show each previously unlocked quote iteratively in a new list item
+			unlockedQuotes.forEach((quote) => {
+				const li = document.createElement("li");
+				li.id = `quote-${quote.id}`;
+				li.title = `Quote #${quote.id}`;
+				li.textContent = quote.message;
+				unlockedQuotesListElement.appendChild(li);
+			});
 
-		// Add a print button that will print the list of previously unlocked quotes
-		const printButton = document.createElement("button");
-		printButton.textContent = "Print Unlocked Quotes";
-		printButton.id = "print-button";
-		printButton.className = "print-btn";
-		printButton.onclick = () => {
-			var printwin = window.open("");
-			printwin.document.write(document.getElementById("unlocked-quotes-list").innerHTML);
-			printwin.stop(); // Stop loading (Chrome bug workaround)
-			printwin.print();
-			printwin.close();
-		};
-		document.querySelector(".page-container").appendChild(printButton);
+			// Add a print button that will print the list of previously unlocked quotes
+			const printButton = document.createElement("button");
+			printButton.textContent = "Print Unlocked Quotes";
+			printButton.id = "print-button";
+			printButton.className = "print-btn";
+			printButton.onclick = () => {
+				var printwin = window.open("");
+				printwin.document.write(document.getElementById("unlocked-quotes-list").innerHTML);
+				printwin.stop(); // Stop loading (Chrome bug workaround)
+				printwin.print();
+				printwin.close();
+			};
+			document.querySelector(".page-container").appendChild(printButton);
 		}
 	}
 
@@ -132,7 +134,7 @@ async function renderQuotes() {
 	 */
 	function getUnlockedQuotes() {
 		const unlockedQuotes = getQuotes();
-		if(unlockedQuotes) return unlockedQuotes.filter((quote) => quote.isLocked === false);
+		if (unlockedQuotes) return unlockedQuotes.filter((quote) => quote.isLocked === false);
 		else return;
 	}
 
@@ -225,11 +227,13 @@ async function renderQuotes() {
 	}
 }
 
+// ==================== Modal window Functions ====================
+
 // Show the modal the furst time a user visits the page
 window.onload = () => {
 	const BIRTHDAY_MESSAGE_VIEWED_DATE = "BIRTHDAY_MESSAGE_VIEWED_DATE";
 	if (localStorage.getItem(BIRTHDAY_MESSAGE_VIEWED_DATE) === null) {
-	// if (true) {
+		// if (true) {
 		birthdayModal.style.display = "block";
 		localStorage.setItem(BIRTHDAY_MESSAGE_VIEWED_DATE, new Date());
 	}
