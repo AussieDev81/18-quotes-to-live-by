@@ -15,6 +15,9 @@
 	--come-back-tomorrow-border-radius: 0.5rem;
 	--daily-quote-margin-block: 5rem;
 	--print-button-font-size: medium;
+	--modal-h1-size: x-large;
+	--modal-font-size: 14px;
+	--modal-centent-width: 60vw;
 }
 
 /*======== MEDIA QUERIES ======== */
@@ -29,6 +32,9 @@
 		--come-back-tomorrow-border-radius: 0.4rem;
 		--daily-quote-margin-block: 2rem;
 		--print-button-font-size: small;
+		--modal-h1-size: small;
+		--modal-font-size: 12px;
+		--modal-centent-width: 90vw;
 	}
 }
 
@@ -156,13 +162,14 @@ footer {
 /* Overlay background */
 .modal {
     display: none;
-    position: fixed;
+	height: 100vh;
+    position:fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
     background-color: rgba(0, 0, 0, 0.7); /* Dark and partially transparent */
     z-index: 999; /* Ensure it's above other content */
+	font-size: var(--modal-font-size);
 }
 
 /* Modal content */
@@ -174,6 +181,12 @@ footer {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: var(--modal-centent-width);
+	overflow: auto;
+}
+
+.modal-content > h1 {
+	font-size: var(--modal-h1-size);
 }
 
 /* Close button (X) */
