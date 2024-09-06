@@ -1,7 +1,7 @@
 const modalTrigger = document.getElementById("modalTrigger");
 const birthdayModal = document.getElementById("birthdayModal");
 const closeModal = document.getElementById("closeModal");
-const DEV_MODE_ACTIVE = true;
+const DEV_MODE_ACTIVE = false;
 
 renderQuotes();
 
@@ -73,13 +73,12 @@ async function renderQuotes() {
 	function showDailyQuote(quote) {
 		if (quote === undefined) {
 			dailyQuoteDivElement.innerHTML = QUOTE_UNLOCK_COMPLETE_MESSAGE;
-
 			//Reset and do it again if in dev mode
 			if (DEV_MODE_ACTIVE) {
-				dailyQuoteDivElement.innerHTML +=
-					'<p class="dev-mode">DEV_MODE active, refresh page to do it again</p>';
-				localStorage.removeItem(LOCAL_STORAGE__QUOTES);
-				localStorage.removeItem(LOCAL_STORAGE__LAST_UNLOCK_DATE);
+				if(confirm("Reset and start again?")){
+					localStorage.removeItem(LOCAL_STORAGE__QUOTES);
+					localStorage.removeItem(LOCAL_STORAGE__LAST_UNLOCK_DATE);
+				}
 			}
 		} else {
 			dailyQuoteDivElement.innerHTML = `<h2>Today's Quote...</h2>${quote.message}`;
@@ -112,19 +111,7 @@ async function renderQuotes() {
 				unlockedQuotesListElement.appendChild(li);
 			});
 
-			// Add a print button that will print the list of previously unlocked quotes
-			const printButton = document.createElement("button");
-			printButton.textContent = "Print Unlocked Quotes";
-			printButton.id = "print-button";
-			printButton.className = "print-btn";
-			printButton.onclick = () => {
-				var printwin = window.open("");
-				printwin.document.write(document.getElementById("unlocked-quotes-list").innerHTML);
-				printwin.stop(); // Stop loading (Chrome bug workaround)
-				printwin.print();
-				printwin.close();
-			};
-			document.querySelector(".page-container").appendChild(printButton);
+			addPrintButton();
 		}
 	}
 
@@ -243,3 +230,19 @@ window.onload = () => {
 closeModal.addEventListener("click", () => {
 	birthdayModal.style.display = "none";
 });
+
+function addPrintButton() {
+	// Add a print button that will print the list of previously unlocked quotes
+	const printButton = document.createElement("button");
+	printButton.textContent = "Print Unlocked Quotes";
+	printButton.id = "print-button";
+	printButton.className = "print-btn";
+	printButton.onclick = () => {
+		var printwin = window.open("");
+		printwin.document.write(document.getElementById("unlocked-quotes-list").innerHTML);
+		printwin.stop(); // Stop loading (Chrome bug workaround)
+		printwin.print();
+		printwin.close();
+	};
+	document.querySelector(".page-container").appendChild(printButton);
+}

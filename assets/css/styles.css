@@ -120,7 +120,8 @@ footer {
 	border-radius: var(--come-back-tomorrow-border-radius);
 	background: var(--come-back-tomorrow-color);
 	box-shadow: 2px 3px 5px var(--shadow-color);
-	border: 1px solid white;
+	border: 1px solid black;
+	color: black;
 }
 
 .daily-quote {
@@ -188,9 +189,10 @@ footer {
 	top: 0;
 	left: 0;
 	width: 100%;
-	background-color: rgba(0, 0, 0, 0.7); /* Dark and partially transparent */
+	background-color: rgba(58, 58, 58, 0.7); /* Dark and partially transparent */
 	z-index: 999; /* Ensure it's above other content */
 	font-size: var(--modal-font-size);
+	color: #2f2f2f;
 }
 
 .modal-content {
