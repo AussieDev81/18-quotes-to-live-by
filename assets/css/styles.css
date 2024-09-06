@@ -1,0 +1,194 @@
+:root {
+	--footer-height: 40px;
+	--footer-border-top-color: #d3d3d3;
+	--default-font-color: #333;
+	--default-font-size: 16px;
+	--default-line-height: 1.5;
+	--daily-quote-color: #7710ff;
+	--unlocked-quote-color: #4b4949;
+	--come-back-tomorrow-color: lightgreen;
+	--print-button-hover-color: #8fed8f91;
+	--shadow-color: darkgrey;
+	--page-container-margin: 0 5rem;
+	--come-back-tomorrow-margin: 3rem auto;
+	--come-back-tomorrow-padding: 1rem;
+	--come-back-tomorrow-border-radius: 0.5rem;
+	--daily-quote-margin-block: 5rem;
+	--print-button-font-size: medium;
+}
+
+/*======== MEDIA QUERIES ======== */
+/* Mobiles */
+@media (max-width: 480px)  {
+	:root {
+		--page-container-margin: 0 1rem;
+		--default-font-size: 14px;
+		--default-line-height: 1.2;
+		--come-back-tomorrow-margin: 1rem auto;
+		--come-back-tomorrow-padding: .5rem;
+		--come-back-tomorrow-border-radius: 0.4rem;
+		--daily-quote-margin-block: 2rem;
+		--print-button-font-size: small;
+	}
+}
+
+/* ======== ELEMENTS ======== */
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	font-family: Arial, sans-serif;
+	font-size: var(--default-font-size);
+	line-height: var(--default-line-height);
+	color: var(--default-font-color);
+}
+
+h2 {
+    font-size: smaller;
+    color: var(--default-font-color);
+}
+
+hgroup {
+	text-align: center;
+}
+
+footer {
+	height: var(--footer-height);
+	margin-bottom: 0;
+	margin-top: 1rem;
+	bottom: 0;
+	text-align: center;
+	align-content: center;
+	border-top: 1px solid var(--footer-border-top-color);
+	background-color: #fff;
+}
+
+/* ======== CLASSES ======== */
+
+.close-btn {
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+	position: relative;
+	float: right;
+    bottom: 3px;
+    left: 2px;
+    margin-left: .5rem;
+}
+
+.close-btn:hover {
+    fill: #fff;
+    stroke-width: 2;
+    transform: scale(1.1);
+}
+
+.come-back-tomorrow {
+	width: fit-content;
+	margin: var(--come-back-tomorrow-margin);
+	padding: var(--come-back-tomorrow-padding);
+	border-radius: var(--come-back-tomorrow-border-radius);
+	background: var(--come-back-tomorrow-color);
+	box-shadow: 2px 3px 5px var(--shadow-color);
+	border: 1px solid var(--default-font-color);
+}
+
+.daily-quote {
+    font-size: x-large;
+    color: var(--daily-quote-color);
+    text-align: center;
+    font-style: italic;
+    margin-block: var(--daily-quote-margin-block);
+}
+
+.dev-mode {
+	color: black;
+	font-size: x-large;
+	font-style: normal;
+	background-color: red;
+	border: 3px dotted black;
+	width: fit-content;
+	margin: 1rem auto;
+	padding: .5rem;
+	animation: blink-animation 1s steps(5, start) infinite;
+}
+
+.highlight {
+    color: var(--daily-quote-color);
+}
+
+.page-container {
+    flex: 1;
+    margin: var(--page-container-margin);
+}
+
+.print-btn {
+	margin: auto;
+	padding: 0.25rem;
+	border-radius: 0.25rem;
+	outline: none;
+	font-size: var(--print-button-font-size);
+	background-color: var(--come-back-tomorrow-color);
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+}
+
+.print-btn:hover {
+	transform: scale(1.05);
+	background-color: var(--print-button-hover-color);
+}
+
+.text-centered {
+	text-align: center;
+}
+
+.unlocked-quotes {
+	font-style: italic;
+	color: var(--unlocked-quote-color);
+	border-top: 1px solid var(--unlocked-quote-color);
+}
+
+/* ======== MODAL WINDOW ======== */
+/* Overlay background */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark and partially transparent */
+    z-index: 999; /* Ensure it's above other content */
+}
+
+/* Modal content */
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Close button (X) */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* ======== KEYFRAMES ======== */
+
+@keyframes blink-animation {
+	to {
+		visibility: hidden;
+	}
+}
