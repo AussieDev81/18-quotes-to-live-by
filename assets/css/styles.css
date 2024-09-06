@@ -32,8 +32,8 @@
 		--come-back-tomorrow-border-radius: 0.4rem;
 		--daily-quote-margin-block: 2rem;
 		--print-button-font-size: small;
-		--modal-h1-size: small;
-		--modal-font-size: 12px;
+		--modal-h1-size: medium;
+		/* --modal-font-size: 12px; */
 		--modal-centent-width: 90vw;
 	}
 }
