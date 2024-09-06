@@ -72,7 +72,7 @@ body {
     height: 100%;
     background-image: url('../img/leighton_and_dad.JPG');
     background-size: cover;
-	background-position: left;
+	background-position: 50% center;
     background-repeat: no-repeat;
     opacity: 0.25; /* Adjust the opacity value (0 to 1) */
 }
