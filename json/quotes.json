@@ -1,47 +1,47 @@
 [
 	{
 		"id": 1,
-		"message": "Embrace change and say yes to opportunities, even if they scare you",
+		"message": "Embrace change and say yes to opportunities, even if they scare you.",
 		"isLocked": true
 	},
 	{
 		"id": 2,
-		"message": "If you have to choose between being right and being kind, always choose kind",
+		"message": "If you have to choose between being right and being kind, always choose kind.",
 		"isLocked": true
 	},
 	{
 		"id": 3,
-		"message": "Surround yourself by people who bring the best out of you, inspire you, believe in you, create a circle if you fall they will catch you. \nThere is no such thing as failure only lessons in life.",
+		"message": "Surround yourself by people who bring the best out of you, inspire you, believe in you; create a circle if you fall they will catch you.",
 		"isLocked": true
 	},
 	{
 		"id": 4,
-		"message": "Its a small world and a long game: be kind",
+		"message": "Its a small world and a long game: be kind.",
 		"isLocked": true
 	},
 	{
 		"id": 5,
-		"message": "You are the CEO of your life, hire and fire accordingly",
+		"message": "You are the CEO of your life, hire and fire accordingly.",
 		"isLocked": true
 	},
 	{
 		"id": 6,
-		"message": "It's okay to quit! Life's too short for things that make you unhappy. Move on and find what serves you!",
+		"message": "It's okay to quit! Life's too short for things that make you unhappy. Move on and find what serves you!.",
 		"isLocked": true
 	},
 	{
 		"id": 7,
-		"message": "Those who mind don't matter those who matter dont mind",
+		"message": "Those who mind don't matter those who matter dont mind.",
 		"isLocked": true
 	},
 	{
 		"id": 8,
-		"message": "It's the choices you make not the chances you take that determine your destiny",
+		"message": "It's the choices you make not the chances you take that determine your destiny.",
 		"isLocked": true
 	},
 	{
 		"id": 9,
-		"message": "Always make time to do things that make you happy and smile, even if it's alone! \nKnow your own worth",
+		"message": "Always make time to do things that make you happy and smile, even if it's alone! \nKnow your own worth.",
 		"isLocked": true
 	},
 	{
@@ -51,7 +51,7 @@
 	},
 	{
 		"id": 11,
-		"message": "Actions speak louder than words. Listen to what people say but if their actions don't match base your response on their   actions.",
+		"message": "Actions speak louder than words. Listen to what people say but if their actions don't match base your response on their actions.",
 		"isLocked": true
 	},
 	{
@@ -61,22 +61,22 @@
 	},
 	{
 		"id": 13,
-		"message": "No one ever sat on their death bed and said \"I should have spent more time at work and less time with my family\"",
+		"message": "No one ever sat on their death bed and said \"I should have spent more time at work and less time with my family\".",
 		"isLocked": true
 	},
 	{
 		"id": 14,
-		"message": "Always have a way to get home - no matter where in the world you are",
+		"message": "Always have a way to get home - no matter where in the world you are.",
 		"isLocked": true
 	},
 	{
 		"id": 15,
-		"message": "Be patient with your own time and energy! Not everything happens fast or when you want it to. \nTreat yourself as you would treat others - with kindness",
+		"message": "Be patient with your own time and energy! Not everything happens fast or when you want it to. \nTreat yourself as you would treat others - with kindness.",
 		"isLocked": true
 	},
 	{
 		"id": 16,
-		"message": "A kind heart will outlast looks any day",
+		"message": "A kind heart will outlast looks any day.",
 		"isLocked": true
 	},
 	{
@@ -86,7 +86,7 @@
 	},
 	{
 		"id": 18,
-		"message": "Good, better, best,\nnever let it rest,\nuntil your good is better\nand your better Best.",
+		"message": "Good, better, best, never let it rest;\nuntil your good is better, and your better best.",
 		"isLocked": true
 	}
 ]
