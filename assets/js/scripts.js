@@ -224,6 +224,8 @@ window.onload = () => {
 		birthdayModal.style.display = "block";
 		localStorage.setItem(BIRTHDAY_MESSAGE_VIEWED_DATE, new Date());
 	}
+	// Add in a sneaky birthday surprise to the console
+	console.warn("⭐⭐⭐ HEY LEIGHTON!!! ⭐⭐⭐\n\nNow that I have your attention, check your bank account 🏦\n\nTHIS IS NOT A SCAM!... I love you son ❣️")
 };
 
 // Close the modal when the close button is clicked
